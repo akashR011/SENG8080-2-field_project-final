@@ -1,8 +1,18 @@
 import pandas as pd
 
 # Data Collection
-df1 = pd.read_csv('Original Dataset1/movies.csv')
-df2 = pd.read_csv('Original Dataset2/tv-series.csv')
+df1 = pd.read_csv('Datasets/Datasets_1/movies.csv')
+df2 = pd.read_csv('Datasets/Datasets_2/tv-series.csv')
+
+print("Printing Dataset 1")
+print()
+print(df1.head())
+print()
+
+print("Printing Dataset 2")
+print()
+print(df1.head())
+print()
 
 # Data Integration
 merged_df = pd.merge(df1, df2, on=['id', 'title', 'vote_average', 'status', 'vote_count', 'homepage', 'spoken_languages', 'original_language', 'tagline', 'production_companies', 'production_countries', 'adult', 'backdrop_path', 'genres', 'popularity', 'poster_path', 'overview'], how='outer')
@@ -10,6 +20,11 @@ merged_df = pd.merge(df1, df2, on=['id', 'title', 'vote_average', 'status', 'vot
 # Data Storage and Maintenance
 # Assuming you want to store the merged data as a new CSV file
 merged_df.to_csv('Merged_Dataset.csv', index=False)
+
+print("Printing Merged Dataset:")
+print()
+print(merged_df.head())
+print()
 
 # Combine all columns with '_x' and '_y' suffixes into a single column
 for column in merged_df.columns:
@@ -41,7 +56,9 @@ for column in columns_with_missing_values:
     print(f"{column}: {merged_df[column].isnull().sum()} missing values")
 
 # Display the cleaned and integrated data
+print("Printing Dataset after performing Data Quality checks and Data Cleaning")
+print()
 print(merged_df.head())
 
 # Save the combined dataset to a new CSV file
-merged_df.to_csv('Combined Dataset/tmdb_dataset.csv', index=False)
+merged_df.to_csv('Datasets/Combined_Dataset/tmdb_dataset.csv', index=False)
