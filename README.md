@@ -35,6 +35,10 @@ This section provides an overview of the project's goals, methodologies, and sig
 
 Details the sources and methods used for data collection, including web scraping techniques.
 
+Data Source 1 : https://www.kaggle.com/datasets/asaniczka/full-tmdb-tv-shows-dataset-2023-150k-shows
+
+Data Source 2 : https://data.world/patriciag/tmdb-data
+
 ## Data Collection
 
 Explains the data collection process, tools used, and the dataset obtained from sources like Kaggle and data.world.
